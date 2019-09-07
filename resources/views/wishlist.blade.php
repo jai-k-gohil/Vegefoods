@@ -65,7 +65,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.blade.php">Shop</a>
               	<a class="dropdown-item" href="wishlist.blade.php">Wishlist</a>
-                <a class="dropdown-item" href="product-single.blade.php">Single Product</a>
+                <a class="dropdown-item" href="product.blade.php">Single Product</a>
                 <a class="dropdown-item" href="cart.blade.php">Cart</a>
                 <a class="dropdown-item" href="checkout.blade.php">Checkout</a>
               </div>

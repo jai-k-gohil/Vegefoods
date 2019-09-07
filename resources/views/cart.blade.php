@@ -75,7 +75,6 @@
 						        
 						        <td class="total">$15.70</td>
 						      </tr><!-- END TR-->
-							  {{ $i=0 }}
 							  @foreach($products as $product)
 							  <tr class="text-center">
 								  <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
@@ -97,7 +96,6 @@
 
 								  <td class="total">${{ $product->price }}</td>
 							  </tr><!-- END TR-->
-								  {{ $i++ }}
 							  @endforeach
 						    </tbody>
 						  </table>
@@ -157,7 +155,7 @@
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span>$17.60</span>
+    						<span>${{ $totalPrice }}</span>
     					</p>
     				</div>
     				<p><a href="checkout.blade.php" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>

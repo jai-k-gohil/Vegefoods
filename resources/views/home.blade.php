@@ -147,35 +147,37 @@
     	</div>
     	<div class="container">
     		<div class="row">
+				@foreach($products as $product)
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Product">
-    						<span class="status">30%</span>
+    					<a href="{{ route('product',['id'=> $product->id]) }}" class="img-prod"><img class="img-fluid" src="{{ asset('images/'.$product->image) }}" alt="{{ $product->name }}">
+    						@if($product->discount > 0)
+							<span class="status">{{ $product->discount }}%</span>
+							@endif
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Bell Pepper</a></h3>
+    						<h3><a href="{{ route('product',['id'=> $product->id]) }}">{{ $product->name }}</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
+									@if($product->discount <= 0)
+										<p class="price"><span class="mr-2">${{ $product->price }}</span></p>
+									@else
+		    							<p class="price"><span class="mr-2 price-dc">${{ $product->price }}</span><span class="price-sale">${{ $product->price-($product->price * ($product->discount/100)) }}</span></p>
+									@endif
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    							<a href="{{ route('product.addToCart',['id'=> $product->id]) }}" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
 	    							</a>
     							</div>
     						</div>
     					</div>
     				</div>
     			</div>
+				@endforeach
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg" alt="Product">

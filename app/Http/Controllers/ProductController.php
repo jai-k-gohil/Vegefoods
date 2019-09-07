@@ -9,12 +9,24 @@ use Session;
 
 class ProductController extends Controller
 {
+    public function getSingleProduct($id)
+    {
+        $product = Product::find($id);
+        $relatedProducts = Product::limit(4)->get();
+        return view('product', ['product' => $product,'relatedProducts' => $relatedProducts]);
+    }
+
     public function getProducts()
     {
-        $products = \App\Product::all();
+        $products = Product::all();
 //        $posts = Post::orderBy('createdAt','desc')->get();
 //        $posts = Post::orderBy('created_at','desc')->paginate(2);
         return view('shop', ['products' => $products]);
+    }
+
+    public function getProductsByLimit($limit)
+    {
+        return Product::limit($limit)->get();
     }
 
     public function addToCart(Request $request, $id) {
@@ -23,7 +35,7 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
         $cart->add($product,$product->id);
         Session::put('cart', $cart);
-        return redirect()->route('home');
+        return redirect()->back();
     }
 
     public function getCart() {
@@ -40,6 +52,12 @@ class ProductController extends Controller
 //
 //        $productDetails = Product::getProductsById($ids);
         return view('cart',['products'=> $cart->items,'totalPrice'=> $cart->totalPrice]);
+    }
+
+    public function getHomePageProducts()
+    {
+        $products = self::getProductsByLimit(8);
+        return view('home', ['products' => $products]);
     }
 
 }

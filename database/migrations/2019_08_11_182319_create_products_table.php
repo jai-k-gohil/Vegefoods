@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('image');
             $table->string('rating');
+            $table->integer('discount');
         });
     }
 
