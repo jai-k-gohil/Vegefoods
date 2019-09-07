@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 use Session;
 
@@ -18,10 +19,18 @@ class ProductController extends Controller
 
     public function getProducts()
     {
-        $products = Product::all();
+        $products = Product::paginate(8);
+        $categories = Category::all();
 //        $posts = Post::orderBy('createdAt','desc')->get();
 //        $posts = Post::orderBy('created_at','desc')->paginate(2);
-        return view('shop', ['products' => $products]);
+        return view('shop', ['products' => $products,'categories' => $categories,'selectedCategory' => -1]);
+    }
+
+    public function getProductsByCategory($id) {
+        $category = Category::find($id);
+        $products = $category->products()->paginate(8);
+        $categories = Category::all();
+        return view('shop', ['products' => $products,'categories' => $categories,'selectedCategory' => $id]);
     }
 
     public function getProductsByLimit($limit)
@@ -34,6 +43,14 @@ class ProductController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->add($product,$product->id);
+        Session::put('cart', $cart);
+        return redirect()->back();
+    }
+
+    public function removeFromCart($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->remove($id);
         Session::put('cart', $cart);
         return redirect()->back();
     }
@@ -59,5 +76,7 @@ class ProductController extends Controller
         $products = self::getProductsByLimit(8);
         return view('home', ['products' => $products]);
     }
+
+
 
 }

@@ -31,9 +31,19 @@ Route::get('product/{id}', [
     'as' => 'product'
 ]);
 
+Route::get('product/category/{id}', [
+    'uses' => 'ProductController@getProductsByCategory',
+    'as' => 'category.products'
+]);
+
 Route::get('/product/addToCart/{id}', [
     'uses' => 'ProductController@addToCart',
     'as' => 'product.addToCart'
+]);
+
+Route::get('/product/removeFromCart/{id}', [
+    'uses' => 'ProductController@removeFromCart',
+    'as' => 'product.removeFromCart'
 ]);
 
 Route::get('/wishlist', function () {

@@ -22,11 +22,22 @@
     		<div class="row justify-content-center">
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
-    					<li><a href="#" class="active">All</a></li>
-    					<li><a href="#">Vegetables</a></li>
-    					<li><a href="#">Fruits</a></li>
-    					<li><a href="#">Juice</a></li>
-    					<li><a href="#">Dried</a></li>
+						@if($selectedCategory == -1)
+							<li><a href="{{ route('shop') }}" class="active">All</a></li>
+						@else
+							<li><a href="{{ route('shop') }}">All</a></li>
+						@endif
+						@foreach($categories as $category)
+							@if($selectedCategory == -1)
+    							<li><a href="{{ route('category.products',['id' => $category->id]) }}">{{ $category->name }}</a></li>
+							@else
+								<li>
+									<a class="{{ $category->id == $selectedCategory ? 'active':'' }}" href="{{ route('category.products',['id' => $category->id]) }}">
+										{{ $category->name }}
+									</a>
+								</li>
+							@endif
+						@endforeach
     				</ul>
     			</div>
     		</div>
@@ -66,23 +77,13 @@
     		</div>
     		<div class="row mt-5">
           <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
+			  {{ $products->links() }}
           </div>
         </div>
     	</div>
     </section>
 
-		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+	<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
       <div class="container py-4">
         <div class="row d-flex justify-content-center py-5">
           <div class="col-md-6">

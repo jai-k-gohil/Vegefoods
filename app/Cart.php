@@ -39,6 +39,11 @@ class Cart
 
     }
 
+    public function remove($id) {
+        $this->totalQty -= $this->items[$id]->qty;
+        unset($this->items[$id]);
+    }
+
     public function existsInArray($entry, $array)
     {
         foreach ($array as $compare) {
