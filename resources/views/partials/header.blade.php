@@ -28,12 +28,11 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a class="dropdown-item" href="{{ route('shop') }}">Shop</a>
-                        <a class="dropdown-item" href="{{ route('wishlist') }}">Wishlist</a>
                         <a class="dropdown-item" href="{{ route('cart') }}">Cart</a>
                         <a class="dropdown-item" href="{{ route('checkout') }}">Checkout</a>
                     </div>
@@ -41,6 +40,19 @@
                 <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
 
                 <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
+                @if(!Auth::check())
+                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+                @else
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </div>
+                    </li>
+                @endif
                 <li class="nav-item cta cta-colored"><a href="{{ route('cart') }}" class="nav-link"><span class="icon-shopping_cart"></span>[{{ Session::has('cart') ? Session::get('cart')->totalQty : 0 }}]</a></li>
 
             </ul>

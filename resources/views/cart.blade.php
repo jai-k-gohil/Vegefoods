@@ -10,13 +10,14 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="home.blade.php">Home</a></span> <span>Cart</span></p>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home') }}">Home</a></span> <span>Cart</span></p>
             <h1 class="mb-0 bread">My Cart</h1>
           </div>
         </div>
       </div>
     </div>
 
+	@if($products != null)
     <section class="ftco-section ftco-cart">
 			<div class="container">
 				<div class="row">
@@ -117,12 +118,23 @@
     						<span>${{ $totalPrice }}</span>
     					</p>
     				</div>
-    				<p><a href="checkout.blade.php" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    				<p><a href="{{ route('checkout') }}" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
     			</div>
     		</div>
 			</div>
 		</section>
-
+	@else
+		<div class="hero-wrap hero-bread">
+			<div class="container">
+				<div class="row no-gutters slider-text align-items-center justify-content-center">
+					<div class="col-md-9 ftco-animate text-center">
+						<h1 class="mb-0">Your basket is empty!</h1>
+						<p class="page-link"><span class="mr-2"><a href="{{ route('shop') }}">Shop here</a></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	@endif
 		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
       <div class="container py-4">
         <div class="row d-flex justify-content-center py-5">
@@ -141,7 +153,7 @@
         </div>
       </div>
     </section>
-  
+	@include('partials.footer')
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
