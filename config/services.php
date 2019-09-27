@@ -44,4 +44,9 @@ return [
         ],
     ],
 
+    'instamojo' => [
+        'x-api-key' => env('X_API_KEY'),
+        'x-auth-token' => env('X_AUTH_TOKEN')
+    ],
+
 ];

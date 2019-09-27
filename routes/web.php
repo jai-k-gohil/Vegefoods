@@ -17,6 +17,16 @@ Route::get('shop','ProductController@getProducts')->name('shop');
 
 Route::get('cart','ProductController@getCart')->name('cart');
 
+Route::get('address',function () {
+    return view('address');
+})->name('user.address');
+
+Route::get('address/{id}','AddressController@get')->name('address.get');
+
+Route::post('address','AddressController@store')->name('address.store');
+
+Route::post('addressupdate','AddressController@update')->name('address.update');
+
 Route::get('product/{id}','ProductController@getSingleProduct')->name('product');
 
 Route::get('product/category/{id}','ProductController@getProductsByCategory')->name('category.products');
@@ -37,6 +47,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::post('checkout','PaymentController@createRequest')->name('createPaymentRequest');
+
+Route::get('redirect/payment/','PaymentController@getAcknowledgement')->name('payment.successful');
 
 Route::prefix('admin')->group(function () {
 

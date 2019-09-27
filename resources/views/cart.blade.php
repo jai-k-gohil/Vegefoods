@@ -102,23 +102,29 @@
     					<h3>Cart Totals</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>$20.60</span>
+    						<span>${{ $totalPrice }}.00</span>
     					</p>
     					<p class="d-flex">
     						<span>Delivery</span>
-    						<span>$0.00</span>
+    						<span>${{ \App\BillingInfo::DELIVERY }}.00</span>
     					</p>
-    					<p class="d-flex">
-    						<span>Discount</span>
-    						<span>$3.00</span>
-    					</p>
+						<p class="d-flex">
+							<span>Tax</span>
+							<span>${{ \App\BillingInfo::TAX }}.00</span>
+						</p>
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span>${{ $totalPrice }}</span>
+    						<span>${{ ($totalPrice+\App\BillingInfo::DELIVERY+\App\BillingInfo::TAX) }}</span>
     					</p>
     				</div>
-    				<p><a href="{{ route('checkout') }}" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    				<p>
+					<form id="logout-form" action="{{ route('createPaymentRequest') }}" method="POST">
+						{{ csrf_field() }}
+						<input type="hidden" name="id" value="{{ Auth::user()->getId() }}">
+						<button type="submit" class="btn btn-primary py-3 px-4">Proceed to Checkout</button>
+					</form>
+					</p>
     			</div>
     		</div>
 			</div>

@@ -6,6 +6,7 @@ use App\Cart;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Session;
 
 class ProductController extends Controller
@@ -39,6 +40,9 @@ class ProductController extends Controller
     }
 
     public function addToCart(Request $request, $id) {
+        if (!$this->isUserLoggedIn()) {
+            return redirect()->route('login');
+        }
         $product = Product::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
@@ -56,6 +60,9 @@ class ProductController extends Controller
     }
 
     public function getCart() {
+        if (!$this->isUserLoggedIn()) {
+            return redirect()->route('login');
+        }
         if (!Session::has('cart')) {
             return view('cart');
         }
@@ -75,6 +82,10 @@ class ProductController extends Controller
     {
         $products = self::getProductsByLimit(8);
         return view('home', ['products' => $products]);
+    }
+
+    private function isUserLoggedIn() {
+        return Auth::check();
     }
 
 

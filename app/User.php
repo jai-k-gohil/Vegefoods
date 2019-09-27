@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','phone',
     ];
 
     /**
@@ -37,7 +37,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 	public $timestamps = false;
-    public function addresses() {
-        return $this->hasMany('\App\Address','address_id');
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+	public function addresses() {
+        return $this->hasMany('\App\Address');
     }
 }
