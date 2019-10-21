@@ -88,24 +88,6 @@ class ProductController extends Controller
         return Auth::check();
     }
 
-    public function getAdminIndex() {
-
-    }
-
-    public function adminStore() {
-
-    }
-
-    public function adminUpdate() {
-
-    }
-
-    public function adminDelete() {
-
-    }
-
-
-
 
 
 }

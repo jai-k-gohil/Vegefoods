@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Admin;
-use App\Product;
 
 class AdminController extends Controller
 {
@@ -19,8 +18,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(8);
-        return view('admin.dashboard',['products'=> $products]);
+        return view('admin.dashboard');
     }
     /**
      * Show the form for creating a new resource.
