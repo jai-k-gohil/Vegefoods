@@ -14,6 +14,5 @@ class Product extends Model
         $string = implode(",",$ids);
         $results = DB::select( DB::raw("SELECT * FROM products WHERE id IN (".$string).")" );
         return $results;
-
     }
 }

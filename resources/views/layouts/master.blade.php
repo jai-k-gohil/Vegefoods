@@ -8,6 +8,15 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ asset('fonts/fonts/Lora/Lora-Regular.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Lora/Lora-Bold.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Amatic_SC/AmaticSC-Regular.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Amatic_SC/AmaticSC-Bold.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-Bold.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-Black.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-Light.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-Medium.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-ExtraBold.ttf') }}" /> -->
 
     <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
@@ -44,7 +53,7 @@
 <script src="{{ asset("js/jquery.animateNumber.min.js") }}"></script>
 <script src="{{ asset("js/bootstrap-datepicker.js") }}"></script>
 <script src="{{ asset("js/scrollax.min.js") }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+{{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>--}}
 <script src="{{ asset("js/google-map.js") }}"></script>
 <script src="{{ asset("js/main.js") }}"></script>
 @yield('scripts')

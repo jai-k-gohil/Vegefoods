@@ -5,9 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    {{--<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">--}}
+    {{--<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">--}}
+    {{--<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">--}}
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Lora/Lora-Regular.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Lora/Lora-Bold.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Lora/Lora-BoldItalic.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Lora/Lora-Italic.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Amatic_SC/AmaticSC-Regular.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Amatic_SC/AmaticSC-Bold.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-Bold.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-Black.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-Light.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-Medium.ttf') }}" />
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/Poppins/Poppins-ExtraBold.ttf') }}" />
+
 
     <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">

@@ -67,5 +67,17 @@ Route::prefix('admin')->group(function () {
 
     Route::post('logout', 'AdminLoginController@logout')->name('admin.auth.logout');
 
+    Route::get('products', 'ProductController@index')->name('admin.products.index');
+
+    Route::get('products', 'ProductController@index')->name('admin.products.index');
+
+    Route::get('product/create', 'ProductController@index')->name('admin.product.create');
+
+    Route::get('product/edit/{id}', 'ProductController@index')->name('admin.product.edit');
+
+    Route::post('product/edit/{id}', 'ProductController@index')->name('admin.product.edit');
+
+    Route::post('product/delete/{id}', 'ProductController@index')->name('admin.product.delete');
+
 });
 Auth::routes();
