@@ -1,4 +1,4 @@
-# Laravel-Ecommerce
+# Vegefoods
 This repository holds the starting source code of ecommerce store which makes use of Laravel framework along with custom content management system(cms). This store is mainly based on food industry that deals with gorceries, and food products.  
 ## Features -  
 * CRUD operations of products that belongs to different categories by authenticated users  
