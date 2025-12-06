@@ -92,7 +92,7 @@
           <div class="col-md-12 heading-section text-center ftco-animate">
           	<span class="subheading">Products</span>
             <h2 class="mb-4">Related Products</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <p>Far far away, behind the word mountains, far from the countries India and Sri Lanka</p>
           </div>
         </div>   		
     	</div>

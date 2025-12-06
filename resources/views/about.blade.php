@@ -27,7 +27,7 @@
 	            </div>
 	          </div>
 	          <div class="pb-md-5">
-	          	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+	          	<p>Far far away, behind the word mountains, far from the countries India and Sri Lanka, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
 							<p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
 							<p><a href="#" class="btn btn-primary">Shop now</a></p>
 						</div>
@@ -98,13 +98,13 @@
     	</div>
     </section>
 		
-		<section class="ftco-section testimony-section">
+		<!-- <section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
           	<span class="subheading">Testimony</span>
             <h2 class="mb-4">Our satisfied customer says</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+            <p>Far far away, behind the word mountains, far from the countries India and Sri Lanka, there live the blind texts. Separated they live in</p>
           </div>
         </div>
         <div class="row ftco-animate">
@@ -118,7 +118,7 @@
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries India and Sri Lanka, there live the blind texts.</p>
                     <p class="name">Garreth Smith</p>
                     <span class="position">Marketing Manager</span>
                   </div>
@@ -132,7 +132,7 @@
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries India and Sri Lanka, there live the blind texts.</p>
                     <p class="name">Garreth Smith</p>
                     <span class="position">Interface Designer</span>
                   </div>
@@ -146,7 +146,7 @@
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries India and Sri Lanka, there live the blind texts.</p>
                     <p class="name">Garreth Smith</p>
                     <span class="position">UI Designer</span>
                   </div>
@@ -160,7 +160,7 @@
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries India and Sri Lanka, there live the blind texts.</p>
                     <p class="name">Garreth Smith</p>
                     <span class="position">Web Developer</span>
                   </div>
@@ -174,7 +174,7 @@
                     </span>
                   </div>
                   <div class="text text-center">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries India and Sri Lanka, there live the blind texts.</p>
                     <p class="name">Garreth Smith</p>
                     <span class="position">System Analyst</span>
                   </div>
@@ -184,7 +184,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="ftco-section bg-light">
 			<div class="container">
